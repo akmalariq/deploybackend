@@ -71,7 +71,7 @@ app.get("/api/v1/car/getby/:id", carsController.getByID);
 
 // API Documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-app.listen(prosess.env.PORT || port, () => {
+console.log(process.env.PORT);
+app.listen(process.env.PORT || port, () => {
   console.log(`Server running at http://127.0.0.1:${port}`);
 });
