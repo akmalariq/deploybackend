@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "0c3ffb52-f510-4188-aa19-42430e696d84",
+		"name": "Challenge-06",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2000/api/v1/car/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"api",
+						"v1",
+						"car",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Car By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2000/api/v1/car/getby/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"api",
+						"v1",
+						"car",
+						"getby",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJha21hbEBlbWFpbC5jb20iLCJpYXQiOjE2Njk5ODg0NDksImV4cCI6MTY3MDA3NDg0OX0.fIXD8Pxs9-JkU9H8R9Ofa0S6lZdaLf209Jh7DCXHXBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:2000/api/v1/car/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"api",
+						"v1",
+						"car",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJha21hbEBlbWFpbC5jb20iLCJpYXQiOjE2Njk5ODg0NDksImV4cCI6MTY3MDA3NDg0OX0.fIXD8Pxs9-JkU9H8R9Ofa0S6lZdaLf209Jh7DCXHXBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Alphard",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "sedan",
+							"type": "text"
+						},
+						{
+							"key": "dailyPrice",
+							"value": "200000",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "medium",
+							"type": "text"
+						},
+						{
+							"key": "imgURL",
+							"value": "google.com",
+							"type": "text"
+						},
+						{
+							"key": "updatedBy",
+							"value": "maram",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2000/api/v1/car/update/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"api",
+						"v1",
+						"car",
+						"update",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Soft Delete Car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJha21hbEBlbWFpbC5jb20iLCJpYXQiOjE2Njk5ODg0NDksImV4cCI6MTY3MDA3NDg0OX0.fIXD8Pxs9-JkU9H8R9Ofa0S6lZdaLf209Jh7DCXHXBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:2000/api/v1/car/delete/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"api",
+						"v1",
+						"car",
+						"delete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "tesfaye",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "tesfaye@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "theweeknd",
+							"type": "text"
+						},
+						{
+							"key": "imgURL",
+							"value": "google.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "akmal@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "akmal1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register As Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJha21hbEBlbWFpbC5jb20iLCJpYXQiOjE2Njk5ODg0NDksImV4cCI6MTY3MDA3NDg0OX0.fIXD8Pxs9-JkU9H8R9Ofa0S6lZdaLf209Jh7DCXHXBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "abel@email.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2000/auth/superadmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"auth",
+						"superadmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJha21hbEBlbWFpbC5jb20iLCJpYXQiOjE2Njk5ODg0NDksImV4cCI6MTY3MDA3NDg0OX0.fIXD8Pxs9-JkU9H8R9Ofa0S6lZdaLf209Jh7DCXHXBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:2000/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

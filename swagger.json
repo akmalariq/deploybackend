@@ -1,0 +1,348 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Synrgy 5 Challenge-06",
+        "description": "Docs for rent a car management",
+        "license": {
+            "name": "MIT",
+            "url": "google.com"
+        }
+    },
+    "host": "localhost:2000",
+    "base_path": "/",
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "API for authentication"
+        },
+        {
+            "name": "Cars",
+            "description": "API for cars"
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Register Endpoint",
+                "parameters": [
+                    {
+                        "name": "register",
+                        "in": "body",
+                        "description": "User to register",
+                        "schema": {
+                            "$ref": "#/definitions/register"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Login Endpoint",
+                "parameters": [
+                    {
+                        "name": "login",
+                        "in": "body",
+                        "description": "User to login",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/superadmin": {
+            "put": {
+                "tags": ["Auth"],
+                "summary": "Register Admin Endpoint",
+                "parameters": [
+                    {
+                        "name": "register admin",
+                        "in": "body",
+                        "description": "Super Admin to register admin",
+                        "schema": {
+                            "$ref": "#/definitions/registerAdmin"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/me": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Current user Endpoint",
+                "parameters": [
+                    {
+                        "name": "current user",
+                        "in": "body",
+                        "description": "Get current user",
+                        "schema": {
+                            "$ref": "#/definitions/currentUser"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/car/create": {
+            "post": {
+                "tags": ["Cars"],
+                "summary": "Create Car Endpoint",
+                "parameters": [
+                    {
+                        "name": "create car",
+                        "in": "body",
+                        "description": "Admin or Super Admin to create car",
+                        "schema": {
+                            "$ref": "#/definitions/createCar"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/car/update/:id": {
+            "put": {
+                "tags": ["Cars"],
+                "summary": "Update Car Entry Endpoint",
+                "parameters": [
+                    {
+                        "name": "update car entry",
+                        "in": "body",
+                        "description": "User to update car entry",
+                        "schema": {
+                            "$ref": "#/definitions/updateCarEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/car/delete/:id": {
+            "delete": {
+                "tags": ["Cars"],
+                "summary": "Soft Delete Car Entry Endpoint",
+                "parameters": [
+                    {
+                        "name": "soft delete car entry",
+                        "in": "body",
+                        "description": "User to soft delete car entry",
+                        "schema": {
+                            "$ref": "#/definitions/softDeleteCarEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/car/getall": {
+            "get": {
+                "tags": ["Cars"],
+                "summary": "Get All Car Entry Endpoint",
+                "parameters": [
+                    {
+                        "name": "get all car entry",
+                        "in": "body",
+                        "description": "User to get all car entry",
+                        "schema": {
+                            "$ref": "#/definitions/getAllCarEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/car/getby/:id": {
+            "get": {
+                "tags": ["Cars"],
+                "summary": "Get Car Entry by ID Endpoint",
+                "parameters": [
+                    {
+                        "name": "get car entry by ID",
+                        "in": "body",
+                        "description": "User to get car entry by ID",
+                        "schema": {
+                            "$ref": "#/definitions/getCarEntryByID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Users"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "register": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "imgURL": {
+                    "type": "string"
+                }
+            }
+        },
+        "login": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "registerAdmin": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                }
+            }
+        },
+        "currentUser": {
+            "properties": {
+                "currentUser": {
+                    "type": "object"
+                }
+            }
+        },
+        "createCar": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "dailyPrice": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "string"
+                },
+                "imgURL": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "updateCarEntry": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "dailyPrice": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "string"
+                },
+                "imgURL": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "softDeleteCarEntry": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "getCarEntryByID": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
