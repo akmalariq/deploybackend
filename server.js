@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 // const swaggerOptions = require('../../binar-deployment-be/utils/swaggerOptions')
 // const bodyParser = require('body-parser')
