@@ -9,7 +9,7 @@ const cors = require("cors");
 // const path = require('path')
 // const upload = require('./utils/fileUpload')
 
-const port = 2000;
+// const port = 2000;
 
 const app = express();
 
@@ -73,6 +73,6 @@ app.get("/api/v1/car/getby/:id", carsController.getByID);
 // API Documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 console.log(process.env.PORT);
-app.listen(process.env.PORT || port, () => {
-  console.log(`Server running at http://127.0.0.1:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server running at http://127.0.0.1:${process.env.PORT}`);
 });
